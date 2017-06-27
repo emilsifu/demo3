@@ -37,6 +37,18 @@ Route::get('/cart','Front@cart');
 Route::get('/checkout','Front@checkout');
 Route::get('/search/{query}','Front@search');
 
-Route::get('blade', function (){
-    return view('page', array('name' => 'The Raven', 'day' => 'Friday'));
+/*Route::get('blade', function (){
+    //return view('page', array('name' => 'The Raven', 'day' => 'Friday'));
+    $value = config('app.timezone');
+    return $value;
+});*/
+
+Route::get('blade', function(){
+    return view ('child');
 });
+
+/*Route::get('user', function(){
+   return view('user');
+});*/
+
+Route::get('user', 'User@index');
